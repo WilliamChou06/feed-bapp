@@ -7,8 +7,9 @@ import Header from './Header';
 import Landing from './Landing';
 import NotFound from './NotFound';
 
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
+const ThankYouPage = () => <h2>Thank you for your feedback!!</h2>;
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Switch>
               <Route path="/" component={Landing} exact />
               <Route path="/surveys" component={Dashboard} exact />
+              <Route path="/surveys/thank-you" component={ThankYouPage} exact />
               <Route path="/surveys/new" component={SurveyNew} />
               <Route component={NotFound} />
             </Switch>
@@ -34,6 +36,7 @@ class App extends Component {
   }
 }
 
-
-
-export default connect(null, actions)(App);
+export default connect(
+  null,
+  actions
+)(App);
